@@ -21,15 +21,15 @@ class JapaneseEra {
     }
 
     public function getDate() {
-        foreach(self::$era_list as $el) {
-            if($el['timestamp'] <= $this->unix_timestamp) {
+        foreach (self::$era_list as $el) {
+            if ($el['timestamp'] <= $this->unix_timestamp) {
                 $this->era = $el;
                 break;
             }
         }
-        if(empty($this->era)) {
+        if (empty($this->era)) {
             return date('Y年n月j日', $this->unix_timestamp);
-        }else {
+        } else {
             $year = date('Y', $this->unix_timestamp) - date('Y', $el['timestamp']) + 1;
             $year = $year == 1 ? '元' : $year;
             return $el['name'] .$year .date('年n月j日', $this->unix_timestamp);

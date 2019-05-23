@@ -1,7 +1,6 @@
 # Japanese Era
 Convert to date of Japanese Era Format from UNIX timestamp.
 
-
 ## Description
 It corresponds to the era after "Meiji Era". (Included "Reiwa Era")
 Otherwise, it will output the Christian year.
